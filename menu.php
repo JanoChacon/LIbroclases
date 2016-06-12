@@ -9,13 +9,14 @@
   	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="images/icon.png">
 </head>
 <body background="images/fondo-azul.jpg">
   <!-- la navbar -->
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-          <a class="navbar-brand" href="#">El nombre</a>
+          <a class="navbar-brand" href="#">Schoolsys</a>
         </div>
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Inicio</a></li>
@@ -44,7 +45,7 @@
         <!-- cuerpo -->
   			<div class="col-sm-9">
   				<div class="jumbotron">
-				    <h1>hola</h1>
+				    <h2>hola</h2>
 				      <p>
 				        Este es un parrafo de prueba, Se le llama base de datos a los bancos de información que contienen datos relativos a diversas temáticas y categorizados de distinta manera, pero que comparten entre sí algún tipo de vínculo o relación que busca ordenarlos y clasificarlos en conjunto.
 

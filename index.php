@@ -3,12 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Inicio</title>
-	<!-- responsibe bootstrap y scripts jQuery/bstrap -->
+	<title>Schoolsys</title>
+	<!-- responsive bootstrap y scripts jQuery/bstrap -->
   	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="images/icon.png"> 
     <style>
       .carousel-inner > .item > img,
       .carousel-inner > .item > a > img {
@@ -22,16 +23,11 @@
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-          <a class="navbar-brand" href="#">El nombre</a>
+          <a class="navbar-brand" href="#">Schoolsys</a>
         </div>
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Inicio</a></li>
-          <li><a href="#">Page 1</a></li>
-          <li><a href="#">Page 2</a></li>
-        </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a type="button" class="btn" data-toggle="modal" data-target="#ModalReg">
-            <span class="glyphicon glyphicon-user"></span> Registrate</a>
+            <span class="glyphicon glyphicon-user"></span> ¿Como obtener una cuenta?</a>
           </li>
           <li><a type="button" class="btn" data-toggle="modal" data-target="#Modalogin">
             <span class="glyphicon glyphicon-log-in"></span> Entrar</a>
@@ -75,7 +71,9 @@
   <!-- el cuerpo de la pagina -->
   <div class="container">
     <div class="jumbotron">
-      <h1>hola</h1>
+        <div class="page-header">
+          <h2>¿Que es Schoolsys?</h2>
+        </div>
       <p>
         Este es un parrafo de prueba, Se le llama base de datos a los bancos de información que contienen datos relativos a diversas temáticas y categorizados de distinta manera, pero que comparten entre sí algún tipo de vínculo o relación que busca ordenarlos y clasificarlos en conjunto.
 
@@ -87,7 +85,7 @@
       </p>
     </div>
   </div>
-  <!-- modals de login/register -->
+  <!-- modals de login -->
     <div class="modal fade" id="Modalogin" role="dialog">
       <div class="modal-dialog">
         <!-- Modal content-->
@@ -97,18 +95,15 @@
             <h4 class="modal-title">Entrar</h4>
           </div>
           <div class="modal-body">
-             <form role="form">
+             <form action="vlogin.php" method="post" role="form">
                 <div class="form-group">
-                  <label for="user">Rut:</label>
-                  <input type="user" class="form-control" id="rut">
+                  <label for="rut">Rut:</label>
+                  <input type="rut" class="form-control" name="rut">
                 </div>
                 <div class="form-group">
-                  <label for="pwd">Contraseña:</label>
-                  <input type="password" class="form-control" id="pwd">
+                  <label for="passwd">Contraseña:</label>
+                  <input type="password" class="form-control" name="passwd">
                 </div>
-                <div class="checkbox">
-                  <label><input type="checkbox">Recordarme</label>
-                </div> 
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-success">Entrar</button>
@@ -118,20 +113,20 @@
         </div>   
       </div>
     </div>
-
+    <!-- modal de como registrar -->
     <div class="modal fade" id="ModalReg" role="dialog">
       <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Modal Header</h4>
+            <h4 class="modal-title">Como entrar</h4>
           </div>
           <div class="modal-body">
-            <p>Some text in the modal.</p>
+            <p>Para conseguir una contraseña, consulte con el administrador encargado de su institucion.</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
           </div>
         </div>   
       </div>
@@ -141,7 +136,7 @@
   <div>
     <footer class="footer">
       <div class="container">
-        <p class="text-muted">Alejandro Chacon ©</p>
+        <p class="text-muted">Alejandro Chacon !© 2016</p>
       </div>
     </footer>
   </div>
