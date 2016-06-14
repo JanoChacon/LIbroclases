@@ -22,6 +22,6 @@ $db=conectar();
    		header('Location: menu.php');
    	}else{
    		//devuelve a login si los datos no concuerdan
-      header('Location: index.php');
+      header('Location: index.php?login=0');
     }
     ?>

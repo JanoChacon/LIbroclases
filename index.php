@@ -1,4 +1,7 @@
 <?php
+session_start();
+include('connection.php');
+$db=conectar();
 ?>
 <!DOCTYPE html>
 <html>
@@ -85,7 +88,7 @@
       </p>
     </div>
   </div>
-  <!-- modals de login -->
+  <!-- modal de login -->
     <div class="modal fade" id="Modalogin" role="dialog">
       <div class="modal-dialog">
         <!-- Modal content-->
@@ -104,9 +107,11 @@
                   <label for="passwd">Contraseña:</label>
                   <input type="password" class="form-control" name="passwd">
                 </div>
+                <div id="nologin">
+                </div>
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-success">Entrar</button>
+            <button type="submit" class="btn btn-success" id="btn-enviar">Entrar</button>
             </form>
             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
           </div>

@@ -16,20 +16,18 @@
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-          <a class="navbar-brand" href="#">Schoolsys</a>
+          <a class="navbar-brand" href="index.php">Schoolsys</a>
         </div>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Inicio</a></li>
-          <li><a href="#">Page 1</a></li>
-          <li><a href="#">Page 2</a></li>
+          <li class="active"><a href="index.php">Inicio</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a type="button" class="btn" data-toggle="modal" data-target="#ModalReg">
-            <span class="glyphicon glyphicon-user"></span> Registrate</a>
+            <span class="glyphicon glyphicon-user"></span> noconf</a>
           </li>
         </ul>
     </div>
-  </nav>
+  </nav> 
   <!-- el cuerpo de la pagina -->
   	<div class="container-fluid">
    		<div class="row">
