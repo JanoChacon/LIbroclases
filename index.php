@@ -1,6 +1,9 @@
 <?php
 session_start();
-include('connection.php');
+if ($_SESSION["session"] == true){
+  header('Location: menu.php');
+}
+include('controllers/connection.php');
 $db=conectar();
 ?>
 <!DOCTYPE html>
@@ -9,7 +12,8 @@ $db=conectar();
 	<title>Schoolsys</title>
 	<!-- responsive bootstrap y scripts jQuery/bstrap -->
   	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script src="js/angular.min.js"></script>
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="images/icon.png"> 
@@ -20,6 +24,23 @@ $db=conectar();
         margin: auto;
     }
   </style>
+  <script>
+    $(document).on("ready",function(){
+    $("#btn-enviar").click(function(e){
+    e.preventDefault();
+    var pet = $("form").attr("action"); 
+    var met = $("form").attr("method"); 
+    $.ajax({ 
+      url: 'controllers/vlogin.php',
+      type: met,
+      data: $("form").serialize(),
+      success: function(info){
+        $("#nologin").html(info);
+         location.reload(); }
+        });
+      }); 
+    }); 
+  </script>
 </head>
 <body background="images/fondo-azul.jpg">
   <!-- la navbar -->
@@ -78,13 +99,7 @@ $db=conectar();
           <h2>¿Que es Schoolsys?</h2>
         </div>
       <p>
-        Este es un parrafo de prueba, Se le llama base de datos a los bancos de información que contienen datos relativos a diversas temáticas y categorizados de distinta manera, pero que comparten entre sí algún tipo de vínculo o relación que busca ordenarlos y clasificarlos en conjunto.
-
-        Una base de datos o banco de datos es un conjunto de datos pertenecientes a un mismo contexto y almacenados sistemáticamente para su posterior uso. En este sentido; una biblioteca puede considerarse una base de datos compuesta en su mayoría por documentos y textos impresos en papel e indexados para su consulta. Actualmente, y debido al desarrollo tecnológico de campos como la informática y la electrónica, la mayoría de las bases de datos están en formato digital, siendo este un componente electrónico, por tanto se ha desarrollado y se ofrece un amplio rango de soluciones al problema del almacenamiento de datos.
-
-        Existen programas denominados sistemas gestores de bases de datos, abreviado SGBD (del inglés Database Management System o DBMS), que permiten almacenar y posteriormente acceder a los datos de forma rápida y estructurada. Las propiedades de estos DBMS, así como su utilización y administración, se estudian dentro del ámbito de la informática.
-
-        Las aplicaciones más usuales son para la gestión de empresas e instituciones públicas; También son ampliamente utilizadas en entornos científicos con el objeto de almacenar la información experimental.
+        Bienvenido a nuestro sistema de libro de clases web.
       </p>
     </div>
   </div>
@@ -98,7 +113,7 @@ $db=conectar();
             <h4 class="modal-title">Entrar</h4>
           </div>
           <div class="modal-body">
-             <form action="vlogin.php" method="post" role="form">
+             <form action="controllers/vlogin.php" method="post" role="form">
                 <div class="form-group">
                   <label for="rut">Rut:</label>
                   <input type="rut" class="form-control" name="rut">
