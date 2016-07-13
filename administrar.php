@@ -32,10 +32,10 @@ if ($_SESSION["tipo"] !=2){
         $("#adminconf").html(info);
       }
         });
-      }); 
+      });
     }); 
   </script>
-<body background="images/fondo-azul.jpg">
+<body background="images/papeltile.jpg">
   <!-- la navbar -->
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -46,7 +46,7 @@ if ($_SESSION["tipo"] !=2){
           <li><a href="menu.php">Menú</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="controllers/closesession.php" type="button" class="btn">
+          <li><a href="conexiones/closesession.php" type="button" class="btn">
             <span class="glyphicon glyphicon-log-out"></span> Cerrar session</a>
           </li>
         </ul>

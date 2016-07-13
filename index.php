@@ -3,12 +3,13 @@ session_start();
 if ($_SESSION["session"] == true){
   header('Location: menu.php');
 }
-include('controllers/connection.php');
+include('conexiones/connection.php');
 $db=conectar();
 ?>
 <!DOCTYPE html>
 <html>
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Schoolsys</title>
 	<!-- responsive bootstrap y scripts jQuery/bstrap -->
   	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,6 +18,7 @@ $db=conectar();
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="images/icon.png"> 
+    
     <style>
       .carousel-inner > .item > img,
       .carousel-inner > .item > a > img {
@@ -31,7 +33,7 @@ $db=conectar();
     var pet = $("form").attr("action"); 
     var met = $("form").attr("method"); 
     $.ajax({ 
-      url: 'controllers/vlogin.php',
+      url: 'conexiones/vlogin.php',
       type: met,
       data: $("form").serialize(),
       success: function(info){
@@ -42,7 +44,7 @@ $db=conectar();
     }); 
   </script>
 </head>
-<body background="images/fondo-azul.jpg">
+<body background="images/bluepaper.jpg">
   <!-- la navbar -->
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -113,7 +115,7 @@ $db=conectar();
             <h4 class="modal-title">Entrar</h4>
           </div>
           <div class="modal-body">
-             <form action="controllers/vlogin.php" method="post" role="form">
+             <form action="conexiones/vlogin.php" method="post" role="form">
                 <div class="form-group">
                   <label for="rut">Rut:</label>
                   <input type="rut" class="form-control" name="rut">
@@ -151,7 +153,6 @@ $db=conectar();
         </div>   
       </div>
     </div>
-
 <!--pie-->
   <div>
     <footer class="footer">

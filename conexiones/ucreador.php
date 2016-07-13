@@ -10,7 +10,7 @@ extract($_POST);
   $passwd = mysqli_real_escape_string($db,$_POST['passwd']);
   $priv = (int)mysqli_real_escape_string($db,$_POST['priv']);
 
-$sql = "INSERT INTO Usuario VALUES ('$rut','$priv','$passwd','a','s','d','w','e')";
+$sql = "INSERT INTO Usuario VALUES ('$rut','$priv','$passwd')";
 
 if(! $db->query($sql)){
      die('Ocurrio un error ejecutando el query [' . $db->error . ']');
