@@ -1,8 +1,7 @@
 <?php
 session_start();
-if ($_SESSION["session"] != true){
-  header('Location: index.php');
-}
+include('conexiones/vsession.php?vadmin=true');
+
 if ($_SESSION["tipo"] !=2){
   header('Location: menu.php');
 }

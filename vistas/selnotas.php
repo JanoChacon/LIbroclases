@@ -1,4 +1,5 @@
 <?php
+    include('../conexiones/vsession.php');
     include("../conexiones/connection.php");
     $db=conectar();
     $sql = "SELECT * FROM Asignatura;";

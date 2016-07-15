@@ -1,4 +1,5 @@
 <?php
+    include('../conexiones/vsession.php');
     session_start();
     include('../conexiones/connection.php');
     $db=conectar();

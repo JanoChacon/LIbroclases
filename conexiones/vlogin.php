@@ -20,9 +20,8 @@ include('connection.php');
    		$_SESSION["rut"] = $row['rutUsuario'];
    		$_SESSION["passwd"] = $row['claveUsuario'];
       $_SESSION["tipo"] = $row['tipoUsuario'];
-      $_SESSION["Curso"] = '4A';
    	}else{
       echo '<div class="alert alert-danger">Datos incorrectos, intente nuevamente</div>
             <script>window.location.href=\"\proyecto\index.php\"</script>';
     }
-    ?>
+?>

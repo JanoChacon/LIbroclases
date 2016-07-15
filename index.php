@@ -68,8 +68,6 @@ $db=conectar();
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-      <li data-target="#myCarousel" data-slide-to="3"></li>
     </ol>
 
     <!-- Wrapper for slides -->
@@ -78,7 +76,7 @@ $db=conectar();
         <img src="images/slide2.jpg" alt="Book" width="460" height="345">
       </div>
       <div class="item">
-        <img src="images/slide.png" alt="example" width="460" height="345">
+        <img src="images/slide3.jpg" alt="example" width="460" height="345">
       </div>
     </div>
 
@@ -135,6 +133,7 @@ $db=conectar();
           </div>
         </div>   
       </div>
+       </div>
     </div>
     <!-- modal de como registrar -->
     <div class="modal fade" id="ModalReg" role="dialog">
@@ -156,7 +155,7 @@ $db=conectar();
     </div>
 <!--pie-->
   <div>
-    <footer class="footer col-sm-2"">
+    <footer class="footer col-sm-2">
       <div class="container">
       <p class="text-muted">Alejandro Chacon !© 2016  <a href="mailto:a.chacon01@ufromail.cl">Contactar</a></p>
       </div>

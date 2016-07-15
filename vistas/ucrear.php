@@ -1,3 +1,4 @@
+<?php include('../conexiones/vsession.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>

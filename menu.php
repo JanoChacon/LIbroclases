@@ -1,9 +1,6 @@
-<?php
-session_start();
-if ($_SESSION["session"] != true){
-  header('Location: index.php');
-}
-?>
+<?php 
+include('conexiones/vsession.php')
+;?>
 <!DOCTYPE html>
 <html>
 <head>
