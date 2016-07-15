@@ -14,8 +14,7 @@ $sql = "INSERT INTO Usuario VALUES ('$rut','$priv','$passwd')";
 
 if(! $db->query($sql)){
      die('Ocurrio un error ejecutando el query [' . $db->error . ']');
-}else{
-    header('Location: /proyecto/administrar.php');
 }
-
 $db->close();
+
+echo '<h3>Usuario nuevo ingresado</h3>';

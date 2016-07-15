@@ -75,10 +75,10 @@ $db=conectar();
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="images/slide.png" alt="Chania" width="460" height="345">
+        <img src="images/slide2.jpg" alt="Book" width="460" height="345">
       </div>
       <div class="item">
-        <img src="images/slide.png" alt="Chania" width="460" height="345">
+        <img src="images/slide.png" alt="example" width="460" height="345">
       </div>
     </div>
 
@@ -101,7 +101,8 @@ $db=conectar();
           <h2>¿Que es Schoolsys?</h2>
         </div>
       <p>
-        Bienvenido a nuestro sistema de libro de clases web.
+        Schoolsys es un sistema que facilita la administracion de datos escolares bajo
+        tecnologias Web, orientado principalmente a escuelas basicas y medias.
       </p>
     </div>
   </div>
@@ -155,9 +156,9 @@ $db=conectar();
     </div>
 <!--pie-->
   <div>
-    <footer class="footer">
+    <footer class="footer col-sm-2"">
       <div class="container">
-        <p class="text-muted">Alejandro Chacon !© 2016</p>
+      <p class="text-muted">Alejandro Chacon !© 2016  <a href="mailto:a.chacon01@ufromail.cl">Contactar</a></p>
       </div>
     </footer>
   </div>

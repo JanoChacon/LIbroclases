@@ -16,25 +16,29 @@ if ($_SESSION["session"] != true){
   	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="images/icon.png">
 </head>
-<script>
-$(document).ready(function(){
+<script type="text/javascript">
+  $(document).ready(function(){
     $("#btn-notas").click(function(){
       $.get("vistas/selnotas.php", function(htmlext){
           $("#contenido").html(htmlext);
       });
     });
     $("#btn-anotaciones").click(function(){
-      $.get("vistas/anotaciones.php", function(htmlext){
+      $.get("vistas/selanotacion.php", function(htmlext){
           $("#contenido").html(htmlext);
       });
     });
-    $("#btn-vnotas").click(function(e){
-       $.get("vistas/notas.php", function(htmlext){
+    $("#btn-asist").click(function(){
+      $.get("vistas/selAsist.php", function(htmlext){
           $("#contenido").html(htmlext);
-          location.reload();
       });
     });
-});
+    $("#btn-activ").click(function(){
+      $.get("vistas/selActiv.php", function(htmlext){
+          $("#contenido").html(htmlext);
+      });
+    });
+  });
 </script>
 <body background="images/bluepaper.jpg">
   <!-- la navbar -->
@@ -52,14 +56,14 @@ $(document).ready(function(){
           </li>
         </ul>
         <?php 
-        if ($_SESSION["tipo"] ==2){
-        echo '<ul class="nav navbar-nav navbar-right">
-                <li><a href="administrar.php" type="button" class="btn">
-                  <span class="glyphicon glyphicon-cog"></span> Administrar</a>
-                </li>
-              </ul>';
-        }
-         ?>
+          if ($_SESSION["tipo"] ==2){
+            echo '<ul class="nav navbar-nav navbar-right">
+                    <li><a href="administrar.php" type="button" class="btn">
+                    <span class="glyphicon glyphicon-cog"></span> Administrar</a>
+                  </li>
+                </ul>';
+          }
+        ?>
     </div>
   </nav> 
   <!-- el cuerpo de la pagina -->
@@ -68,10 +72,11 @@ $(document).ready(function(){
         <!-- barra navegacion vertical -->
   			<div class="col-sm-2">
   				<ul class="nav nav-pills nav-stacked">
-				    <li class="active"><a href="menu.php">Menu</a></li>
-            <li><a href="#">Asistencias</a></li>
-            <li><a href="#" type="button" id="btn-notas">Notas</a></li>
-            <li><a href="#" type="button" id="btn-anotaciones">Anotaciones</a></li>
+				    <li id="menu1" class="active" ><a href="menu.php">Menu</a></li>
+            <li id="menu3"><a href="#" type="button" id="btn-notas">Calificaciones</a></li>
+            <li id="menu2"><a href="#" type="button" id="btn-anotaciones">Hoja de vida</a></li>
+            <li id="menu3"><a href="#" type="button" id="btn-asist">Asistencias</a></li>
+            <li id="menu4"><a href="#" type="button" id="btn-activ">Registro Actividad</a></li>
   				</ul>
 			</div>
         <!-- cuerpo -->
@@ -94,6 +99,5 @@ $(document).ready(function(){
 			</div>
 		</div>
  	</div>
-
 </body>
 </html>

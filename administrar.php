@@ -18,23 +18,15 @@ if ($_SESSION["tipo"] !=2){
   	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="images/icon.png">
 </head>
-<script>
-    $(document).on("ready",function(){
-    $("#btn-aduser").click(function(e){
-    e.preventDefault();
-    var pet = $("form").attr("action"); 
-    var met = $("form").attr("method"); 
-    $.ajax({ 
-      url: 'vistas/ucrear.php',
-      type: met,
-      data: $("form").serialize(),
-      success: function(info){
-        $("#adminconf").html(info);
-      }
-        });
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#btn-aduser").click(function(){
+      $.get("vistas/ucrear.php", function(htmlext){
+          $("#admincont").html(htmlext);
       });
-    }); 
-  </script>
+    });
+  });
+</script>
 <body background="images/papeltile.jpg">
   <!-- la navbar -->
   <nav class="navbar navbar-inverse">
@@ -58,14 +50,14 @@ if ($_SESSION["tipo"] !=2){
         <!-- barra navegacion vertical -->
         <div class="col-sm-2">
           <ul class="nav nav-pills nav-stacked">
-            <li><a href="vistas/ucrear.php" type="button" id="btn-aduser">Administrar usuarios</a></li>
+            <li><a href="#" type="button" id="btn-aduser">Crear Usuario</a></li>
             <li><a href="#">Administrar Datos</a></li>
           </ul>
       </div>
         <!-- cuerpo -->
         <div class="col-sm-10">
           <div class="jumbotron">
-            <div id="adminconf">
+            <div id="admincont">
               <h3>Seleccione una funcion</h3>
               <p>
                 <br>
@@ -83,14 +75,6 @@ if ($_SESSION["tipo"] !=2){
           </div>
       </div>
     </div>
-  </div>
-  <!--pie-->
-  <div>
-    <footer class="footer">
-      <div class="container">
-        <p class="text-muted">Alejandro Chacon !© 2016</p>
-      </div>
-    </footer>
   </div>
 </body>
 </html>

@@ -2,7 +2,8 @@
 session_start();
 include('connection.php');
 
-$db=conectar();
+  $db=conectar();
+
   $rut = mysqli_real_escape_string($db,$_POST['rut']);
 	$passwd = mysqli_real_escape_string($db,$_POST['passwd']);
 

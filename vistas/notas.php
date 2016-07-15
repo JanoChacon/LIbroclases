@@ -3,29 +3,24 @@
     include('../conexiones/connection.php');
     $db=conectar();
 
-    $idAsignatura = mysqli_real_escape_string($db,$_POST['Asign']);
-    $Curso = mysqli_real_escape_string($db,$_POST['Curso']);
-    
-    echo $idAsignatura;
+    $idAsig=$_POST["Asign"];
+    $idcurso=$_POST["Curso"];
+    $idsem=$_POST["Sem"];
 
     $sql = "SELECT * FROM Calificaciones INNER JOIN Alumno INNER JOIN Asignatura
             WHERE Calificaciones.rutAlumno = Alumno.rutAlumno 
             AND Calificaciones.idAsignatura = Asignatura.idAsignatura 
-            AND Asignatura.idAsignatura = '$idAsignatura';";
+            AND Asignatura.idAsignatura = '$idAsig'
+            AND Alumno.idCurso='$idcurso'
+            AND Calificaciones.semestre='$idsem'
+            ORDER BY Alumno.apAlumno1;";
+
     if(!$resultado = $db->query($sql)){
         die('Ocurrio un error ejecutando el query [' . $db->error . ']');
     }
- ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Notas</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-</head>
-<body>
-<div class="container">
+    $db->close();
+    
+echo '<div class="container">
     <div>
         <table class="table table-striped table-bordered">
             <thead>
@@ -41,32 +36,22 @@
                     <th>Nota 8</th>
                     <th>Nota 9</th>
                     <th>Nota 10</th>
-                    <th>Promedio</th>
                 </tr>
             </thead>
-            <tbody>
-            <?php
+            <tbody>';
                 while($fila = $resultado->fetch_assoc()){
-                echo '
-                <tr>
-                <td>'.$fila['rutAlumno'].' '.$fila['nAlumno'].' '.$fila['apAlumno1'].'</td>
-                <td>'.$fila['Nota1'].'</td>
-                <td>'.$fila['Nota2'].'</td>
-                <td>'.$fila['Nota3'].'</td>
-                <td>'.$fila['Nota4'].'</td>
-                <td>'.$fila['Nota5'].'</td>
-                <td>'.$fila['Nota6'].'</td>
-                <td>'.$fila['Nota7'].'</td>
-                <td>'.$fila['Nota8'].'</td>
-                <td>'.$fila['Nota9'].'</td>
-                <td>'.$fila['Nota10'].'</td>
-                <td></td>
-                ';
+                    echo '
+                    <tr>
+                    <td>'.$fila['rutAlumno'].' '.$fila['apAlumno1'].' '.$fila['nAlumno'].'</td>
+                    <td>'.$fila['Nota1'].'</td>
+                    <td>'.$fila['Nota2'].'</td>
+                    <td>'.$fila['Nota3'].'</td>
+                    <td>'.$fila['Nota4'].'</td>
+                    <td>'.$fila['Nota5'].'</td>
+                    <td>'.$fila['Nota6'].'</td>
+                    <td>'.$fila['Nota7'].'</td>
+                    <td>'.$fila['Nota8'].'</td>
+                    <td>'.$fila['Nota9'].'</td>
+                    <td>'.$fila['Nota10'].'</td>';
                 }
-            ?>
-            </tbody>
-        </table>
-    </div>
-</div>
-</body>
-</html>
+?>
