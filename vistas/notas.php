@@ -19,9 +19,9 @@
         die('Ocurrio un error ejecutando el query [' . $db->error . ']');
     }
     $db->close();
-    
-echo '<div class="container">
-    <div>
+?>
+
+<div class="container">
         <table class="table table-striped table-bordered">
             <thead>
                 <tr>
@@ -36,9 +36,11 @@ echo '<div class="container">
                     <th>Nota 8</th>
                     <th>Nota 9</th>
                     <th>Nota 10</th>
+                    <th>Editar</th>
                 </tr>
             </thead>
-            <tbody>';
+            <tbody>
+            <?php 
                 while($fila = $resultado->fetch_assoc()){
                     echo '
                     <tr>
@@ -52,6 +54,10 @@ echo '<div class="container">
                     <td>'.$fila['Nota7'].'</td>
                     <td>'.$fila['Nota8'].'</td>
                     <td>'.$fila['Nota9'].'</td>
-                    <td>'.$fila['Nota10'].'</td>';
-                }
-?>
+                    <td>'.$fila['Nota10'].'</td>
+                    <td><a href="javascript:buscarNotas(\''.$fila['rutAlumno'].'\',\''.$idAsig.'\','.$idsem.',\''.$idcurso.'\');" class="btn btn-info btn-sm">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a></td>';
+                }?>
+<div id="resultado"></div>
+

@@ -3,8 +3,6 @@ session_start();
 if ($_SESSION["session"] == true){
   header('Location: menu.php');
 }
-include('conexiones/connection.php');
-$db=conectar();
 ?>
 <!DOCTYPE html>
 <html>
@@ -117,7 +115,7 @@ $db=conectar();
              <form action="conexiones/vlogin.php" method="post" role="form">
                 <div class="form-group">
                   <label for="rut">Rut:</label>
-                  <input type="rut" class="form-control" name="rut">
+                  <input type="text" class="form-control" name="rut">
                 </div>
                 <div class="form-group">
                   <label for="passwd">Contraseña:</label>
@@ -133,7 +131,6 @@ $db=conectar();
           </div>
         </div>   
       </div>
-       </div>
     </div>
     <!-- modal de como registrar -->
     <div class="modal fade" id="ModalReg" role="dialog">
