@@ -10,34 +10,11 @@ include('conexiones/vsession.php')
   	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-        <script src="js/notas.js"></script>
+        <script src="js/funcionesmenu.js"></script>
   	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="images/icon.png">
-    <script type="text/javascript">
-      $(document).ready(function(){
-        $("#btn-notas").click(function(){
-          $.get("vistas/selNotas.php", function(htmlext){
-              $("#contenido").html(htmlext);
-          });
-        });
-        $("#btn-anotaciones").click(function(){
-          $.get("vistas/selanotacion.php", function(htmlext){
-              $("#contenido").html(htmlext);
-          });
-        });
-        $("#btn-asist").click(function(){
-          $.get("vistas/selAsist.php", function(htmlext){
-              $("#contenido").html(htmlext);
-          });
-        });
-        $("#btn-activ").click(function(){
-          $.get("vistas/selActiv.php", function(htmlext){
-              $("#contenido").html(htmlext);
-          });
-        });
-      });
-  </script>
 </head>
+
 <body background="images/bluepaper.jpg">
   <!-- la navbar -->
   <nav class="navbar navbar-inverse">
@@ -49,7 +26,7 @@ include('conexiones/vsession.php')
           <li class="active"><a href="index.php">Inicio</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="conexiones/closesession.php" type="button" class="btn">
+          <li><a href="conexiones/cerrarSession.php" type="button" class="btn">
             <span class="glyphicon glyphicon-log-out"></span> Cerrar session</a>
           </li>
         </ul>
@@ -75,6 +52,8 @@ include('conexiones/vsession.php')
             <li id="menu2"><a href="#" type="button" id="btn-anotaciones">Hoja de vida</a></li>
             <li id="menu3"><a href="#" type="button" id="btn-asist">Asistencias</a></li>
             <li id="menu4"><a href="#" type="button" id="btn-activ">Registro Actividad</a></li>
+            <li id="menu5"><a href="#" type="button" id="btn-alumnos">Alumnos</a></li>
+            <li id="menu6"><a href="#" type="button" id="btn-curso">Cursos</a></li>
   				</ul>
 			</div>
         <!-- cuerpo -->

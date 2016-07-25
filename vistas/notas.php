@@ -56,7 +56,7 @@
                     <td>'.$fila['Nota9'].'</td>
                     <td>'.$fila['Nota10'].'</td>
                     <td><a href="javascript:buscarNotas(\''.$fila['rutAlumno'].'\',\''.$idAsig.'\','.$idsem.',\''.$idcurso.'\');" class="btn btn-info btn-sm">
-                        <span class="glyphicon glyphicon-pencil"></span>
+                        <span class="glyphicon glyphicon-pencil"></span></a>
                     </a></td>';
                 }?>
 <div id="resultado"></div>

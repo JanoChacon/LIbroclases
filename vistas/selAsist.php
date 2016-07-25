@@ -13,10 +13,6 @@
     }
     $db->close();
  ?>
-<html>
-<head>
-    <meta charset="utf-8">
-</head>
 <!--envio de datos por post sin recargar pagina
   evita que el evento default del boton submit, luego serializa los datos del formulario, y los envia a notas.php, ultimo carga la informacion de notas.php en el div señalado
 -->
@@ -30,7 +26,6 @@
     });
   });
 </script>
-<body>
 <h3>Asistencia</h3>
       <br>
     <form action="vistas/Asistencia.php" method="post" role="form" id="asist-form">
@@ -57,7 +52,7 @@
       		</div>
 	      	<div class="col-xs-4">
 	        	<label class="control-label" for="Fecha">Fecha:</label>
-                <input type="text" placeholder="aa-mm-dd" class="form-control" name="Fecha">
+                <input type="text" placeholder="aaaa-mm-dd" class="form-control" name="Fecha">
 	      	</div>
 	      	<div class="col-xs-2">
 	      		<br>
@@ -71,6 +66,6 @@
     <br>
     <br>
     <br>
-    <div id="asist">
-    </div>
-</body>
+<div id="asist">
+</div>
+

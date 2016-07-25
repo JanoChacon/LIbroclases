@@ -20,7 +20,7 @@
   $(document).ready(function(){
     $("#btn-anot").click(function(e){
       e.preventDefault();
-      $.post("vistas/anotaciones.php", $("#anot-form").serialize(), function(htmlext){
+      $.post("vistas/Anotaciones.php", $("#anot-form").serialize(), function(htmlext){
           $("#anotaciones").html(htmlext);
       });
     });
@@ -29,10 +29,11 @@
 <body>
 <h3>Hoja de vida</h3>
       <br>
+      <h4>busqueda de Registros</h4>
      <form action="vistas/anotaciones.php" method="post" role="form" id="anot-form">
         <div class="form-group">
           <div class="col-xs-4">
-            <label class="control-label" for="rutAl">Rut Alumno:</label>
+            <label class="control-label" for="rutAl">por rut de Alumno:</label>
                 <input type="text" placeholder="11111111-1" class="form-control" name="rutAl">
           </div>
         </div>

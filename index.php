@@ -115,7 +115,7 @@ if ($_SESSION["session"] == true){
              <form action="conexiones/vlogin.php" method="post" role="form">
                 <div class="form-group">
                   <label for="rut">Rut:</label>
-                  <input type="text" class="form-control" name="rut">
+                  <input type="text" class="form-control" placeholder="11111111-1" name="rut">
                 </div>
                 <div class="form-group">
                   <label for="passwd">Contraseña:</label>

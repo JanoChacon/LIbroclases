@@ -14,13 +14,14 @@ if ($_SESSION["tipo"] !=2){
   	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="js/Administrar.js"></script>
   	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="images/icon.png">
 </head>
 <script type="text/javascript">
   $(document).ready(function(){
     $("#btn-aduser").click(function(){
-      $.get("vistas/ucrear.php", function(htmlext){
+      $.get("vistas/crearUser.php", function(htmlext){
           $("#admincont").html(htmlext);
       });
     });
@@ -37,7 +38,7 @@ if ($_SESSION["tipo"] !=2){
           <li><a href="menu.php">Menú</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="conexiones/closesession.php" type="button" class="btn">
+          <li><a href="conexiones/cerrarSession.php" type="button" class="btn">
             <span class="glyphicon glyphicon-log-out"></span> Cerrar session</a>
           </li>
         </ul>
@@ -49,8 +50,8 @@ if ($_SESSION["tipo"] !=2){
         <!-- barra navegacion vertical -->
         <div class="col-sm-2">
           <ul class="nav nav-pills nav-stacked">
-            <li><a href="#" type="button" id="btn-aduser">Crear Usuario</a></li>
-            <li><a href="#">Administrar Datos</a></li>
+            <li><a href="#" type="button" id="btn-aduser">Administar Usuarios</a></li>
+            <li><a href="#">Registros</a></li>
           </ul>
       </div>
         <!-- cuerpo -->
