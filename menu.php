@@ -10,11 +10,11 @@ include('conexiones/vsession.php')
   	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-        <script src="js/funcionesmenu.js"></script>
+    <script src="js/funcionesmenu.js"></script>
   	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
     <link rel="shortcut icon" href="images/icon.png">
 </head>
-
 <body background="images/bluepaper.jpg">
   <!-- la navbar -->
   <nav class="navbar navbar-inverse">
@@ -76,5 +76,45 @@ include('conexiones/vsession.php')
 			</div>
 		</div>
  	</div>
+
+<div class="modal fade" id="crea-anot-modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">Crear Nueva Anotacion</h4>
+            </div>
+            <form class="form-horizontal" method="post" role="form" id="anotcrea-form">
+              <div class="modal-body">
+                      <div class="row">
+                          <div class="col-sm-4">
+                            <label class="control-label" for="rutProf">Rut Profesor:</label>
+                            <input type="text" class="form-control" name="rutProf" placeholder="11111111-1">
+                          </div>
+                          <div class="col-sm-4">
+                            <label class="control-label" for="fecha">Fecha:</label>
+                            <input type="text" class="form-control" name="fecha" placeholder="aaaa-mm-dd">
+                          </div>
+                          <div class="col-sm-4">
+                            <input type="text" required="required" readonly="readonly" id="rutAl" name="rutAl" readonly="readonly" style="visibility:hidden; height:1px;"/>
+                          </div>
+                      </div>
+                      <div class="row">
+                        <br>
+                          <div class="col-sm-12">
+                            <label class="control-label" for="anot">Anotacion:</label>
+                             <textarea input type="text" class="form-control" name="anot" placeholder="Anotacion..."></textarea>
+                          </div>
+                      </div>             
+              </div>
+            <div class="modal-footer">
+                <input type="submit" value="Ingresar" class="btn btn-warning" id="btn-anotacioncrear" data-dismiss="modal"/>
+                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

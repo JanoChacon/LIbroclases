@@ -38,7 +38,7 @@
         <div class="form-group">
           <label class="control-label col-sm-2" for="rut">Rut:</label>
           <div class="col-sm-10">
-            <input type="rut" class="form-control" name="rut">
+            <input type="rut" class="form-control" maxlength="10" name="rut">
           </div>
         </div>
         <div class="form-group">

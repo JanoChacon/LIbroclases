@@ -25,6 +25,11 @@ if ($_SESSION["tipo"] !=2){
           $("#admincont").html(htmlext);
       });
     });
+   $("#btn-registro").click(function(){
+      $.get("vistas/verRegistro.php", function(htmlext){
+          $("#admincont").html(htmlext);
+      });
+    });
   });
 </script>
 <body background="images/papeltile.jpg">
@@ -51,7 +56,7 @@ if ($_SESSION["tipo"] !=2){
         <div class="col-sm-2">
           <ul class="nav nav-pills nav-stacked">
             <li><a href="#" type="button" id="btn-aduser">Administar Usuarios</a></li>
-            <li><a href="#">Registros</a></li>
+            <li><a href="#" type="button" id="btn-registro">Registros</a></li>
           </ul>
       </div>
         <!-- cuerpo -->

@@ -84,6 +84,12 @@ $sql2 = "SELECT * FROM Calificaciones INNER JOIN Alumno INNER JOIN Asignatura
             AND Calificaciones.semestre='$idsem'
             ORDER BY Alumno.apAlumno1;";
 
+$rutUsuario=$_SESSION["rut"];
+ if(! $db->query("INSERT INTO `Registro` (`idRegistro`, `Registrocol`, `fechaRegistro`, `rutUsuario`) VALUES (NULL, 'Notas editadas de: {$rut}', CURRENT_TIMESTAMP, '$rutUsuario');")){
+     die('Ocurrio un error ejecutando el query [' . $db->error . ']');
+}
+
+
     if(!$resultado = $db->query($sql2)){
         die('Ocurrio un error ejecutando el query [' . $db->error . ']');
     }else{

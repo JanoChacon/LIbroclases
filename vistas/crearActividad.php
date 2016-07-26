@@ -33,7 +33,7 @@
     <div class="row">
         <div class="col-sm-4">
           <label class="control-label" for="rutProf">Rut Profesor:</label>
-          <input type="text" class="form-control" name="rutProf" placeholder="11111111-1">
+          <input type="text" class="form-control" name="rutProf" maxlength="10" placeholder="11111111-1">
         </div>
         <div class="col-sm-4">
             <label for="asign">Asingnatura:</label>
@@ -59,14 +59,14 @@
         </div>
         <div class="col-sm-4">
           <label class="control-label" for="fecha">Fecha:</label>
-          <input type="text" class="form-control" name="fecha" placeholder="aaaa-mm-dd">
+          <input type="text" class="form-control" maxlength="10" name="fecha" placeholder="aaaa-mm-dd">
         </div>
     </div>
     <div class="row">
       <br>
         <div class="col-sm-12">
           <label class="control-label" for="activ">Actividad Realizada:</label>
-           <textarea input type="text" class="form-control" name="activ" placeholder="Actividad..."></textarea>
+           <textarea input type="text" class="form-control" maxlength="1450" name="activ" placeholder="Actividad..."></textarea>
         </div>
     </div>
     <br>             

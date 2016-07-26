@@ -10,10 +10,21 @@
     }
     $db->close();
  ?>
+ <script type="text/javascript">
+  $(document).ready(function(){
+    $("#btn-alumno").click(function(){
+          $.get("vistas/crearAlumno.php", function(htmlext){
+              $("#anotaciones").html(htmlext);
+          });
+    });
+  });
+</script>
 <div id="anotaciones">
 	<div class="container">
 		<div>
-			
+			<button type="submit" class="btn btn-success" id="btn-alumno">Ingresar nuevo alumno</button>
+			<br>
+			<br>
 		</div>
 	        <table class="table table-striped table-bordered">
 	            <thead>

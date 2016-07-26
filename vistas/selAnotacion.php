@@ -34,7 +34,7 @@
         <div class="form-group">
           <div class="col-xs-4">
             <label class="control-label" for="rutAl">por rut de Alumno:</label>
-                <input type="text" placeholder="11111111-1" class="form-control" name="rutAl">
+                <input type="text" placeholder="11111111-1" maxlength="10" class="form-control" name="rutAl">
           </div>
         </div>
           <div class="col-xs-2">

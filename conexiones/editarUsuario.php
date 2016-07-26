@@ -1,6 +1,6 @@
 <?php
 include('connection.php');
-
+include('vsession.php');
 $db=conectar();
 
 extract($_POST);
@@ -19,6 +19,12 @@ extract($_POST);
     case "Administrador":
         $tipo =2;
         break;
+}
+
+$rutUsuario=$_SESSION["rut"];
+
+ if(! $db->query("INSERT INTO `Registro` (`idRegistro`, `Registrocol`, `fechaRegistro`, `rutUsuario`) VALUES (NULL, 'usuario editado: {$rut}', CURRENT_TIMESTAMP, '$rutUsuario');")){
+     die('Ocurrio un error ejecutando el query [' . $db->error . ']');
 }
   		
 $sql = "UPDATE Usuario SET `tipoUsuario`= '$tipo', `claveUsuario` = '$passwd' WHERE rutUsuario = '$rut';";

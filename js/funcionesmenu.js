@@ -97,7 +97,7 @@ function verHoja(rutAl){
 
 function modalAnotacion(rutAl){
         $('#rutAl').val(rutAl);
-        $('#edit-anot-modal').modal({
+        $('#crea-anot-modal').modal({
             show:true,
             backdrop:'static'
         });

@@ -1,5 +1,6 @@
 <?php
 include('connection.php');
+include('vsession.php');
 
 $db=conectar();
 
@@ -14,6 +15,13 @@ $sql = "INSERT INTO `Usuario` (`rutUsuario`, `tipoUsuario`, `claveUsuario`) VALU
 if(! $db->query($sql)){
      die('Ocurrio un error ejecutando el query [' . $db->error . ']');
 }
+
+$rutUsuario=$_SESSION["rut"];
+
+ if(! $db->query("INSERT INTO `Registro` (`idRegistro`, `Registrocol`, `fechaRegistro`, `rutUsuario`) VALUES (NULL, 'nuevo usuario ingresado: {$rut}', CURRENT_TIMESTAMP, '$rutUsuario');")){
+     die('Ocurrio un error ejecutando el query [' . $db->error . ']');
+}
+
 $db->close();
 
 echo '<h3>Usuario nuevo ingresado</h3>';

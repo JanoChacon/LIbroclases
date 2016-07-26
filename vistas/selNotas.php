@@ -48,49 +48,49 @@
                         <div class="row">
                           <div class="col-sm-4">
                             <label class="control-label" for="n1">Nota 1: </label>
-                            <input type="number"  name="n1" id="n1"/></td>
+                            <input type="number" min="10" max="70" name="n1" id="n1"/></td>
                           </div>
                           <div class="col-sm-4">
                             <label class="control-label" for="n2">Nota 2: </label>
-                            <input type="number"  name="n2" id="n2"/></td>
+                            <input type="number" min="10" max="70" name="n2" id="n2"/></td>
                           </div>
                           <div class="col-sm-4">
                             <label class="control-label" for="n3">Nota 3: </label>
-                            <input type="number"  name="n3" id="n3"/></td>
+                            <input type="number" min="10" max="70" name="n3" id="n3"/></td>
                           </div>
                         </div>
                         <div class="row">
                           <div class="col-xs-4">
                             <label class="control-label" for="n4">Nota 4: </label>
-                            <input type="number"  name="n4" id="n4" maxlength="100"/></td>
+                            <input type="number" min="10" max="70" name="n4" id="n4" maxlength="100"/></td>
                           </div>
                           <div class="col-xs-4">
                             <label class="control-label" for="n5">Nota 5: </label>
-                            <input type="number"  name="n5" id="n5" maxlength="100"/></td>
+                            <input type="number" min="10" max="70" name="n5" id="n5" maxlength="100"/></td>
                           </div>
                           <div class="col-xs-4">
                             <label class="control-label" for="n6">Nota 6: </label>
-                            <input type="number"  name="n6" id="n6" maxlength="100"/></td>
+                            <input type="number" min="10" max="70" max="7" name="n6" id="n6" maxlength="100"/></td>
                           </div>
                         </div>
                          <div class="row">
                           <div class="col-xs-4">
                             <label class="control-label" for="n7">Nota 7: </label>
-                            <input type="number"  name="n7" id="n7" maxlength="100"/></td>
+                            <input type="number" min="10" max="70" max="7" name="n7" id="n7" maxlength="100"/></td>
                           </div>
                           <div class="col-xs-4">
                             <label class="control-label" for="n8">Nota 8: </label>
-                            <input type="number"  name="n8" id="n8" maxlength="100"/></td>
+                            <input type="number" min="10" max="70" max="7" name="n8" id="n8" maxlength="100"/></td>
                           </div>
                           <div class="col-xs-4">
                             <label class="control-label" for="n9">Nota 9: </label>
-                            <input type="number"  name="n9" id="n9" maxlength="100"/></td>
+                            <input type="number" min="10" max="70" max="7" name="n9" id="n9" maxlength="100"/></td>
                           </div>
                          </div>
                         <div class="row">
                           <div class="col-xs-4">
                             <label class="control-label" for="n10">Nota 10: </label>
-                            <input type="number"  name="n10" id="n10" maxlength="100"/></td>
+                            <input type="number" name="n10" id="n10" min="10" max="70" maxlength="100"/></td>
                           </div>
                           <div class="col-xs-4">
                             <input type="text" required="required" readonly="readonly" id="inrut" name="inrut" readonly="readonly" style="visibility:hidden; height:1px;"/>

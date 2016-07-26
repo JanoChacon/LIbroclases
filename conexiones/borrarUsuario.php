@@ -1,5 +1,6 @@
 <?php
 include('connection.php');
+include('vsession.php');
 $db=conectar();
 
 $rutUser = $_POST['rutUser'];
@@ -15,7 +16,13 @@ $consulta = "SELECT * FROM Usuario";
 if (!$result = $db->query($consulta)){
 
     	printf("error en la consulta");
-  }
+}
+
+$rutUsuario=$_SESSION["rut"];
+ if(! $db->query("INSERT INTO `Registro` (`idRegistro`, `Registrocol`, `fechaRegistro`, `rutUsuario`) VALUES (NULL, 'Usuario borrado: {$rutUser}', CURRENT_TIMESTAMP, '$rutUsuario');")){
+     die('Ocurrio un error ejecutando el query [' . $db->error . ']');
+}
+
   echo '<div id="Usuario">
 	<div class="container">
 	        <table class="table table-striped table-bordered">

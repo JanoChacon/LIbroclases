@@ -1,6 +1,6 @@
 <?php
 include('connection.php');
-
+include('vsession.php');
 $db=conectar();
 
 extract($_POST);
@@ -18,6 +18,12 @@ $sql = "INSERT INTO `Actividad` (`FechaAct`, `idAsignatura`, `rutProfesor`, `idC
 if(! $db->query($sql)){
      die('Ocurrio un error ejecutando el query [' . $db->error . ']');
 }
+
+$rutUsuario=$_SESSION["rut"];
+ if(! $db->query("INSERT INTO `Registro` (`idRegistro`, `Registrocol`, `fechaRegistro`, `rutUsuario`) VALUES (NULL, 'Actividad Añadida por: {$rutProf}', CURRENT_TIMESTAMP, '$rutUsuario');")){
+     die('Ocurrio un error ejecutando el query [' . $db->error . ']');
+}
+
 $db->close();
 
 echo 'actividad ingresada';
